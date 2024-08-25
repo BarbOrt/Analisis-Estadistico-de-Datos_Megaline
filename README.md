@@ -1,97 +1,104 @@
-# Análisis de Tarifas de Megaline
+# Análisis Estadístico de Datos - Proyecto Megaline
 
 ## Descripción del Proyecto
 
-¡Felicidades por completar la sección de Análisis Estadístico de Datos! En este proyecto, actuarás como analista para Megaline, un operador de telecomunicaciones. El objetivo es determinar qué tarifa prepago genera más ingresos para la empresa: Surf o Ultimate.
-
-Trabajarás con un conjunto de datos de 500 clientes que incluye información sobre llamadas, mensajes de texto y datos de navegación durante el año 2018. Tu tarea es analizar estos datos para evaluar el comportamiento de los clientes y determinar cuál tarifa aporta más ingresos. Además, realizarás pruebas estadísticas para comparar el ingreso promedio de los usuarios en diferentes tarifas y regiones.
+Este proyecto se enfoca en el análisis del comportamiento de los clientes de Megaline, un operador de telecomunicaciones que ofrece dos tarifas de prepago: Surf y Ultimate. El objetivo es determinar cuál de las dos tarifas genera más ingresos para la empresa, basándose en los datos de 500 clientes durante el año 2018.
 
 ## Descripción de las Tarifas
 
-- **Surf**: 
-  - Pago mensual: $20
-  - Incluye: 500 minutos, 50 SMS, 15 GB de datos
-  - Excedentes: 
-    - Minuto: $0.03
-    - SMS: $0.03
-    - GB de datos: $10
+### Surf
+- **Pago mensual:** $20
+- **Incluye:** 500 minutos, 50 SMS, 15 GB de datos
+- **Costos adicionales:**
+  - Minuto adicional: $0.03
+  - SMS adicional: $0.03
+  - GB adicional: $10
 
-- **Ultimate**: 
-  - Pago mensual: $70
-  - Incluye: 3000 minutos, 1000 SMS, 30 GB de datos
-  - Excedentes:
-    - Minuto: $0.01
-    - SMS: $0.01
-    - GB de datos: $7
+### Ultimate
+- **Pago mensual:** $70
+- **Incluye:** 3000 minutos, 1000 SMS, 30 GB de datos
+- **Costos adicionales:**
+  - Minuto adicional: $0.01
+  - SMS adicional: $0.01
+  - GB adicional: $7
 
 ## Diccionario de Datos
 
-- **users**: Datos sobre los usuarios
-  - `user_id`: Identificador único del usuario
-  - `first_name`: Nombre del usuario
-  - `last_name`: Apellido del usuario
-  - `age`: Edad del usuario
-  - `reg_date`: Fecha de suscripción
-  - `churn_date`: Fecha de cancelación
-  - `city`: Ciudad de residencia
-  - `plan`: Nombre de la tarifa
+### users.csv (Datos sobre los usuarios)
+- `user_id`: Identificador único del usuario
+- `first_name`: Nombre del usuario
+- `last_name`: Apellido del usuario
+- `age`: Edad del usuario
+- `reg_date`: Fecha de suscripción
+- `churn_date`: Fecha de finalización del servicio (nulo si sigue activo)
+- `city`: Ciudad de residencia
+- `plan`: Nombre de la tarifa
 
-- **calls**: Datos sobre las llamadas
-  - `id`: Identificador único de la llamada
-  - `call_date`: Fecha de la llamada
-  - `duration`: Duración de la llamada (en minutos)
-  - `user_id`: Identificador del usuario
+### calls.csv (Datos sobre las llamadas)
+- `id`: Identificador único de la llamada
+- `call_date`: Fecha de la llamada
+- `duration`: Duración de la llamada en minutos
+- `user_id`: Identificador del usuario que realizó la llamada
 
-- **messages**: Datos sobre los SMS
-  - `id`: Identificador único del SMS
-  - `message_date`: Fecha del SMS
-  - `user_id`: Identificador del usuario
+### messages.csv (Datos sobre los SMS)
+- `id`: Identificador único del SMS
+- `message_date`: Fecha del SMS
+- `user_id`: Identificador del usuario que envió el SMS
 
-- **internet**: Datos sobre las sesiones web
-  - `id`: Identificador único de la sesión
-  - `mb_used`: Volumen de datos gastados (en megabytes)
-  - `session_date`: Fecha de la sesión web
-  - `user_id`: Identificador del usuario
+### internet.csv (Datos sobre las sesiones web)
+- `id`: Identificador único de la sesión
+- `mb_used`: Volumen de datos utilizados durante la sesión (en MB)
+- `session_date`: Fecha de la sesión web
+- `user_id`: Identificador del usuario
 
-- **plans**: Datos sobre las tarifas
-  - `plan_name`: Nombre de la tarifa
-  - `usd_monthly_fee`: Pago mensual
-  - `minutes_included`: Minutos incluidos al mes
-  - `messages_included`: SMS incluidos al mes
-  - `mb_per_month_included`: Datos incluidos al mes (en megabytes)
-  - `usd_per_minute`: Precio por minuto extra
-  - `usd_per_message`: Precio por SMS extra
-  - `usd_per_gb`: Precio por GB de datos extra
+### plans.csv (Datos sobre las tarifas)
+- `plan_name`: Nombre de la tarifa
+- `usd_monthly_fee`: Pago mensual en USD
+- `minutes_included`: Minutos incluidos por mes
+- `messages_included`: SMS incluidos por mes
+- `mb_per_month_included`: Datos incluidos por mes (en MB)
+- `usd_per_minute`: Costo por minuto adicional
+- `usd_per_message`: Costo por SMS adicional
+- `usd_per_gb`: Costo por GB adicional (1 GB = 1024 MB)
 
-## Instrucciones
+## Instrucciones para Completar el Proyecto
 
-### Paso 1: Exploración de Datos
-- Abre los archivos de datos (`/datasets/megaline_calls.csv`, `/datasets/megaline_internet.csv`, `/datasets/megaline_messages.csv`, `/datasets/megaline_plans.csv`, `/datasets/megaline_users.csv`).
-- Examina la información general de cada tabla.
+1. **Abrir y explorar los datos.**
+2. **Preparar los datos:**
+   - Convertir los datos a los tipos correctos.
+   - Eliminar errores en los datos.
+   - Calcular métricas por usuario: llamadas, SMS, datos y ingresos mensuales.
+3. **Análisis de datos:**
+   - Describir el comportamiento de los clientes.
+   - Calcular estadísticas: media, varianza, desviación estándar.
+   - Realizar pruebas de hipótesis sobre los ingresos generados por las tarifas.
+4. **Escribir conclusiones.**
 
-### Paso 2: Preparación de Datos
-- Convierte los datos a los tipos adecuados.
-- Identifica y corrige errores en los datos.
-- Calcula el número de llamadas, SMS, y datos por mes para cada usuario.
-- Calcula los ingresos mensuales para cada usuario.
+## Instrucciones del Proyecto
 
-### Paso 3: Análisis de Datos
-- Describe el comportamiento de los usuarios de cada tarifa.
-- Calcula la media, varianza y desviación estándar.
-- Traza histogramas y describe las distribuciones.
+1. **Apertura y exploración de datos:**
+   - Se abrieron los archivos de datos proporcionados y se realizó un análisis exploratorio inicial para entender la estructura y contenido de cada tabla.
 
-### Paso 4: Pruebas de Hipótesis
-- Comparar el ingreso promedio entre tarifas Ultimate y Surf.
-- Comparar el ingreso promedio entre usuarios de Nueva York-Nueva Jersey y otras regiones.
-- Formula hipótesis nula y alternativa y explica los métodos utilizados para probarlas.
+2. **Preparación de los datos:**
+   - Los datos fueron convertidos a los tipos de datos apropiados según su contexto (por ejemplo, fechas, enteros).
+   - Se identificaron y eliminaron errores en los datos, como valores faltantes o duplicados.
+   - Se calcularon las métricas relevantes para cada usuario, incluyendo:
+     - Número total de llamadas y minutos utilizados por mes.
+     - Cantidad de SMS enviados por mes.
+     - Volumen de datos utilizados por mes.
+     - Ingresos mensuales generados por cada usuario, considerando los costos adicionales por exceder los límites del plan.
 
-### Paso 5: Conclusión General
-- Resume los hallazgos y conclusiones del análisis.
+3. **Análisis de datos:**
+   - Se describió el comportamiento de los clientes en términos de minutos de llamada, SMS enviados y datos utilizados por mes.
+   - Se calcularon estadísticas descriptivas como la media, la varianza y la desviación estándar para cada métrica.
+   - Se generaron gráficos que muestran la distribución de las llamadas, SMS y uso de datos por los clientes de las dos tarifas.
+   - Se identificaron las diferencias en el comportamiento entre los usuarios de las tarifas Surf y Ultimate.
 
-## Archivos del Proyecto
+4. **Pruebas de hipótesis:**
+   - Se realizó una prueba de hipótesis para determinar si existe una diferencia significativa en el ingreso promedio generado por los usuarios de las tarifas Surf y Ultimate.
+   - También se realizó una prueba de hipótesis para comparar los ingresos generados por los usuarios de Nueva York-Nueva Jersey con los de otras regiones.
 
-- `/datasets/megaline_calls.csv`
-- `/datasets/megaline_internet.csv`
-- `/datasets/megaline_messages.csv`
-- `/datasets/megaline_plans.csv`
-- `/datasets/megaline_users.csv`
+5. **Conclusiones:**
+   - Se redactaron conclusiones basadas en los análisis y pruebas estadísticas realizadas, destacando cuál tarifa es más rentable para Megaline y las diferencias en el comportamiento de los clientes según la región.
+
+
