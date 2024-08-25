@@ -4,7 +4,7 @@
 
 ¡Felicidades por completar la sección de Análisis Estadístico de Datos! En este proyecto, actuarás como analista para Megaline, un operador de telecomunicaciones. El objetivo es determinar qué tarifa prepago genera más ingresos para la empresa: Surf o Ultimate.
 
-Trabajarás con un conjunto de datos de 500 clientes que incluye información sobre llamadas, mensajes de texto, y datos de navegación durante el año 2018. Tu tarea es analizar estos datos para evaluar el comportamiento de los clientes y determinar cuál tarifa aporta más ingresos. Además, realizarás pruebas estadísticas para comparar el ingreso promedio de los usuarios en diferentes tarifas y regiones.
+Trabajarás con un conjunto de datos de 500 clientes que incluye información sobre llamadas, mensajes de texto y datos de navegación durante el año 2018. Tu tarea es analizar estos datos para evaluar el comportamiento de los clientes y determinar cuál tarifa aporta más ingresos. Además, realizarás pruebas estadísticas para comparar el ingreso promedio de los usuarios en diferentes tarifas y regiones.
 
 ## Descripción de las Tarifas
 
@@ -88,17 +88,6 @@ Trabajarás con un conjunto de datos de 500 clientes que incluye información so
 ### Paso 5: Conclusión General
 - Resume los hallazgos y conclusiones del análisis.
 
-## Evaluación del Proyecto
-
-Tu proyecto será evaluado en base a:
-- Explicaciones sobre errores y correcciones en los datos.
-- Preparación y limpieza de datos.
-- Gráficos y análisis de distribuciones.
-- Cálculo de desviación estándar y varianza.
-- Formulación y prueba de hipótesis.
-- Interpretación de resultados y conclusiones.
-- Claridad y organización del código y documentación.
-
 ## Archivos del Proyecto
 
 - `/datasets/megaline_calls.csv`
@@ -106,4 +95,3 @@ Tu proyecto será evaluado en base a:
 - `/datasets/megaline_messages.csv`
 - `/datasets/megaline_plans.csv`
 - `/datasets/megaline_users.csv`
-
